@@ -28,8 +28,8 @@ url: "https://phillips-systems.github.io"
 github:
   username: phillips-systems # change to your github username
 
-    #twitter:
-    #  username: twitter_username # change to your twitter username
+twitter:
+  username: twitter_username # change to your twitter username
 
 social:
   # Change to your full name.
