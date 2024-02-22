@@ -1,6 +1,6 @@
 ---
 title: Building an AI home lab with Proxmox
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: 2024-02-22 17:00:00 +0600
 categories: [Home_Lab, GenAI]
 tags: [proxmox, ai, genai, cuda]     # TAG names should always be lowercase 
 ---
@@ -57,7 +57,7 @@ When creating VM's I suggest a few non-default options:
 * Uncheck **Start after created**
     * We need to assign the GPU to the VM so there's no point in starting it yet
  
-![example_config.png](./img/example_config.png "example_config.png")
+![example_config.png](/assets/img/example_config.png)
 
 ### Adding GPU
 
@@ -67,7 +67,7 @@ Once the VM is created, navigate to the hardware tab, select **Add > PCI Device*
 
 Check the box to enable **All Functions** and then click **Add**. Keep in mind that while you can have multiple VMs with the same GPU added to them, only one can be powered on at a time.
 
-![pci_list.png](./img/pci_list.png)
+![pci_list.png](/assets/img/pci_list.png)
 
 ### Last steps
 
@@ -75,7 +75,7 @@ At this point, fire up the VM and proceed with the guest OS install. Once comple
 
 Start the VM and navigate to the **Backup** tab. Verify the **Storage** drop down menu at the top right shows your intended backup target and select **Backup now**. I suggest adding a comment to the notes field to save yourself from having to guess what state the VM is in based solely on timestamps. Once you hit the **Backup** button the job will kick off starting with pausing/ stopping the VM. If your job stalls trying to shutdown the VM verify the qemu guest agent installed correctly.
 
-![backup_example.png](./img/backup_example.png "backup_example.png")
+![backup_example.png](/assets/img/backup_example.png)
 
 I generally recommend creating a backup at major milestones such as completing software installs or configs so you have convenient rollback points
 
@@ -85,7 +85,10 @@ At this point we've got the basic framework setup to start working with GPU acce
 
 # References
 
-https://developer.nvidia.com/cuda-gpus
-https://pve.proxmox.com/wiki/PCI(e)_Passthrough
-https://www.proxmox.com/en/proxmox-virtual-environment/requirements
-https://pve.proxmox.com/wiki/Qemu-guest-agent
+[https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus)
+
+[https://pve.proxmox.com/wiki/PCI(e)_Passthrough](https://pve.proxmox.com/wiki/PCI(e)_Passthrough)
+
+[https://www.proxmox.com/en/proxmox-virtual-environment/requirements](https://www.proxmox.com/en/proxmox-virtual-environment/requirements)
+
+[https://pve.proxmox.com/wiki/Qemu-guest-agent](https://pve.proxmox.com/wiki/Qemu-guest-agent)
